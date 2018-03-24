@@ -35,8 +35,8 @@
 */
 
 (function() {
-    var script = document.querySelector('#lrbox > div:nth-child(1) ' +
-        '> div:nth-child(2) > div:nth-child(1) > script:nth-child(2)');
+    var dlbutton = document.getElementById('dlbutton');
+    var script = dlbutton.parentElement.querySelector('script');
     var m1 = /^\s*var\s+a\s*=\s*(\d+)\s*;/.exec(script.innerText);
     var m2 = /document\.getElementById\('dlbutton'\)\.href\s*=\s*"([^"]*)"\+\(Math\.pow\(a,\s*(\d+)\)\+b\)\+"([^"]*)"/.exec(script.innerText);
     if (!m1 || !m2) {
